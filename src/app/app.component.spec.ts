@@ -3,6 +3,9 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
+
+  let component = new AppComponent();
+
   beforeEach(() => TestBed.configureTestingModule({
     imports: [RouterTestingModule],
     declarations: [AppComponent]
@@ -26,4 +29,19 @@ describe('AppComponent', () => {
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('.content span')?.textContent).toContain('AngularUnitTestApp app is running!');
   });
+
+  it('should return message', () => {
+    expect(component.ShowMessage("Hello")).toEqual("Hello");
+  
+  })
+
+  it('toBeTrue test case', () => {
+    var a=true;
+    expect(a).toBeTrue();
+  })
+
+  it('toBeGreaterThan  test case', () => {
+    var a=5;
+    expect(a).toBeGreaterThan(3);
+  })
 });
